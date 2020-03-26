@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Amanda_M_Slutprojekt_2020
 {

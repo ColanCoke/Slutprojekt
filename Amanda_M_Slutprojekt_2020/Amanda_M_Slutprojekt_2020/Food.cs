@@ -6,11 +6,8 @@ namespace Amanda_M_Slutprojekt_2020
 {
     class Food
     {
-        string sweetness;
-
-        string sour;
-
-        string savoury;
+        //dictionary for the different menu items
+        protected Dictionary<string, string> menuItems = new Dictionary<string, string>(); 
 
         int hungerfill;
 

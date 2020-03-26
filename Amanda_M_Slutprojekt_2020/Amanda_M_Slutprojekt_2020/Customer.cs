@@ -6,7 +6,13 @@ namespace Amanda_M_Slutprojekt_2020
 {
     class Customer
     {
-        //Preferences
+
+        bool likesCold() //a boolean to see if customer likes cold or warm food/drink.
+        {
+            return false;
+        }
+
+        string[] arrPref = new string[] { "sweet", "sour", "savoury" }; //an array for the different kinds of preferences
 
         //Make an array or list containing preferences and name it preferences.
         //Then you can use that list to reference it with a variable/string

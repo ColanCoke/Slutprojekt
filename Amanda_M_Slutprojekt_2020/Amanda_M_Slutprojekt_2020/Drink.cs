@@ -6,8 +6,20 @@ namespace Amanda_M_Slutprojekt_2020
 {
     class Drink : Food
     {
-        string cold;
+        public Drink() //en konstruktor som lägger till drickor till menuItems
+        {
+            menuItems.Add("Flying Syrup", "sweet");
+            menuItems.Add("Brewed Cocoa", "savoury");
+            menuItems.Add("Poppy Milk", "sour");
+            menuItems.Add("Frogle(g)monade", "sour");
+            menuItems.Add("Juiced Sage", "savoury");
+            menuItems.Add("Goat's Breath Milkshake", "sweet");
+        }
+        
 
-        string warm;
+
+        bool cold; //a bool to see if food is cold or warm
+
+        
     }
 }
