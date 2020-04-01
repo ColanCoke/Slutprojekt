@@ -15,10 +15,16 @@ namespace Amanda_M_Slutprojekt_2020
             menuItems.Add("Juiced Sage", "savoury");
             menuItems.Add("Goat's Breath Milkshake", "sweet");
         }
-        
-
+        //Get a bool method
+        //if it is choice 1-3 cold = false
+        //if it is choice 4-6 cold = true
 
         bool cold; //a bool to see if food is cold or warm
+
+        bool Cold()
+        {
+            return false;
+        }
 
         
     }

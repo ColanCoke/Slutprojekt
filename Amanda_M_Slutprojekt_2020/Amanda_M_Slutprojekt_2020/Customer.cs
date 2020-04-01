@@ -4,15 +4,33 @@ using System.Text;
 
 namespace Amanda_M_Slutprojekt_2020
 {
-    class Customer
+    public class Customer
     {
+        public Customer()
+        {
+            string[] arrPref = new string[] { "sweet", "sour", "savoury" }; //an array for the different kinds of preferences
+            Random gen = new Random();
+            int pref = gen.Next(0, 2);
+            preference = arrPref[pref];
+
+            //corresponding number of array in randomiser
+            //randomiser used in writing in the string preference
+
+        }
+
+        string preference;
+
+        public string GetPreference()
+        {
+            return preference;
+        }
 
         bool likesCold() //a boolean to see if customer likes cold or warm food/drink.
         {
             return false;
         }
 
-        string[] arrPref = new string[] { "sweet", "sour", "savoury" }; //an array for the different kinds of preferences
+        
 
         //Make an array or list containing preferences and name it preferences.
         //Then you can use that list to reference it with a variable/string

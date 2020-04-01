@@ -7,10 +7,21 @@ namespace Amanda_M_Slutprojekt_2020
     {
         static void Main(string[] args)
         {
+            /*
+             gör klart drink och customer
+              börja göra vanliga koden. resten faller på plats när drink fungerar och minglar med
+              main koden.
+              
+            */
+
             Console.WriteLine("Welcome to Witchy Brews, the café where we know more about what you want than you do!");
             Console.WriteLine("You are the owner, having an ability to 'read' incoming costumers to find out what they want.");
             Console.WriteLine("You get to choose a drink and then the optional choices of meal and/or side.");
             Console.WriteLine("Do you want a tutorial?");
+
+            var c1 = new Customer();
+            
+            Console.WriteLine(c1.GetPreference());
 
             /*
              Ready for customer?
