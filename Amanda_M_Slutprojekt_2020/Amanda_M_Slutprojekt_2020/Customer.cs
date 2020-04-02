@@ -6,21 +6,18 @@ namespace Amanda_M_Slutprojekt_2020
 {
     public class Customer
     {
-        public Customer()
+        public Customer() //en konstruktor som randomiserar en Customers flavour preference
         {
             string[] arrPref = new string[] { "sweet", "sour", "savoury" }; //an array for the different kinds of preferences
-            Random gen = new Random();
-            int pref = gen.Next(0, 2);
-            preference = arrPref[pref];
-
-            //corresponding number of array in randomiser
-            //randomiser used in writing in the string preference
+            Random gen = new Random(); //random generator
+            int pref = gen.Next(0, 3); //randomiserar en siffra som korresponderar med en plats i arrayn
+            preference = arrPref[pref]; //säger att preference är den delen i listan som pref korresponderar med
 
         }
 
-        string preference;
+        string preference; //string för preference så det kan användas genom hela klassen
 
-        public string GetPreference()
+        public string GetPreference() //metod som skriver ut customers preference
         {
             return preference;
         }

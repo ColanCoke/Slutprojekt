@@ -15,13 +15,35 @@ namespace Amanda_M_Slutprojekt_2020
             */
 
             Console.WriteLine("Welcome to Witchy Brews, the café where we know more about what you want than you do!");
-            Console.WriteLine("You are the owner, having an ability to 'read' incoming costumers to find out what they want.");
+            Console.WriteLine("You are the owner, having an ability to 'read' incoming costumers to find out what they like.");
             Console.WriteLine("You get to choose a drink and then the optional choices of meal and/or side.");
-            Console.WriteLine("Do you want a tutorial?");
+            Console.WriteLine("Ready? Let's start!");
 
-            var c1 = new Customer();
+            string play = "yes";
+
+            while (play == "yes")
+            {
+                var c1 = new Customer();
+
+                Console.WriteLine("A costumer enters the shop! They step up to the counter and you greet them.");
+                Console.WriteLine("Do you want to 'read' the customer?");
+                Console.WriteLine("Write Yes or No.");
+
+                string read = YesNo();
+
+                if(read == "yes")
+                {
+                    Console.WriteLine("You focus in on the customer, taking a deep gander at their eyes.");
+                    Console.WriteLine("You feel a gentle tingle of magic...");
+
+                    Console.WriteLine("Customer prefers the flavour " + c1.GetPreference() + "!");
+                }
+                
+
+
+            }
+
             
-            Console.WriteLine(c1.GetPreference());
 
             /*
              Ready for customer?
@@ -81,6 +103,20 @@ namespace Amanda_M_Slutprojekt_2020
 
             Console.ReadLine();
         }
+
+        static string YesNo()
+        {
+            string yesno = Console.ReadLine().ToLower(); //simpelt. En metod som skickar ut Yes eller No som en string till metoden som kallade på YesNo.
+
+            while ((yesno != "no") && (yesno != "yes"))//Göt en while-loop så att spelaren inte kan skriva annat än yes eller no
+            {
+                Console.WriteLine("Please write only Yes or No.");
+
+                yesno = Console.ReadLine().ToLower();//gör en toLower för att göra så att spelarens typografi(caps tex) inte spelar någon roll.
+            }
+
+            return (yesno);//skickar tillbaka stringen yesno till metoden som kallade på YesNo.
+        } //Gjorde en string för Yes eller No eftersom detta används mycket i spelet.
 
         static void Tutorial()
         {
