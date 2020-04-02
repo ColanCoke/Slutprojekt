@@ -38,9 +38,23 @@ namespace Amanda_M_Slutprojekt_2020
 
                     Console.WriteLine("Customer prefers the flavour " + c1.GetPreference() + "!");
                 }
-                
+                else if (read == "no")
+                {
+                    Console.WriteLine("You decide to wing it. What's the worse that could happen?");
+                }
+                Console.WriteLine("The customer nods to you and seats themselves at a table. Time to prepare their order!");
+                Console.ReadLine();
 
+                Console.Clear();
 
+                var drink = new Drink();
+
+                Console.WriteLine("You head to the kitchen to prepare a drink for the customer.");
+                Console.WriteLine("Choose drink:");
+
+                drink.GetMenuItems();
+
+                Console.ReadLine();
             }
 
             
