@@ -19,7 +19,7 @@ namespace Amanda_M_Slutprojekt_2020
             Console.WriteLine("You get to choose a drink and then the optional choices of meal and/or side.");
             Console.WriteLine("Ready? Let's start!");
 
-            string play = "yes";
+            string play = YesNo();
 
             while (play == "yes")
             {
@@ -53,6 +53,9 @@ namespace Amanda_M_Slutprojekt_2020
                 Console.WriteLine("Choose drink:");
 
                 drink.GetMenuItems();
+
+                drink = new ColdDrink();
+
 
                 Console.ReadLine();
             }
