@@ -19,10 +19,7 @@ namespace Amanda_M_Slutprojekt_2020
         //if it is choice 1-3 cold = false
         //if it is choice 4-6 cold = true
 
-        public void ChoiceDrink()
-        {
-
-        }
+        public string choiceDrink;
 
         public virtual bool Cold()
         {

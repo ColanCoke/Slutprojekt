@@ -47,12 +47,21 @@ namespace Amanda_M_Slutprojekt_2020
 
                 Console.Clear();
 
+
                 var drink = new Drink();
 
                 Console.WriteLine("You head to the kitchen to prepare a drink for the customer.");
-                Console.WriteLine("Choose drink:");
+                Console.WriteLine("Choose drink (please write the item EXACTLY as it is written):");
 
                 drink.GetMenuItems();
+                drink.choiceDrink = Console.ReadLine();
+
+                while (drink.menuItems.ContainsKey(drink.choiceDrink) == false)
+                {
+
+                    Console.WriteLine("Hm, I don't remember a drink like that...");
+                    Console.WriteLine("Please write one of the following drink names. Write the item EXACTLY as it is written.");
+                }
 
                 drink = new ColdDrink();
 
