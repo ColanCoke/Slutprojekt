@@ -58,9 +58,9 @@ namespace Amanda_M_Slutprojekt_2020
 
                 while (drink.menuItems.ContainsKey(drink.choiceDrink) == false)
                 {
-
                     Console.WriteLine("Hm, I don't remember a drink like that...");
                     Console.WriteLine("Please write one of the following drink names. Write the item EXACTLY as it is written.");
+                    drink.choiceDrink = Console.ReadLine();
                 }
 
                 drink = new ColdDrink();

@@ -11,7 +11,7 @@ namespace Amanda_M_Slutprojekt_2020
             menuItems.Add("Flying Syrup", "sweet");
             menuItems.Add("Brewed Cocoa", "savoury");
             menuItems.Add("Poppy Milk", "sour");
-            menuItems.Add("Frogle(g)monade", "sour");
+            menuItems.Add("Froglegmonade", "sour");
             menuItems.Add("Juiced Sage", "savoury");
             menuItems.Add("Goat's Breath Milkshake", "sweet");
         }
