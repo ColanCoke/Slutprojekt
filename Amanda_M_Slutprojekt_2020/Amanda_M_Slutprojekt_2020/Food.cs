@@ -9,17 +9,9 @@ namespace Amanda_M_Slutprojekt_2020
         //dictionary for the different menu items
         public Dictionary<string, string> menuItems = new Dictionary<string, string>();
 
-        /*
-        public void GetMenuItems()
+        public void GetMenuItems() //metod för att skriva ut menu items
         {
-            List<string> menuList = new List<string>(this.menuItems.Keys);
-            Console.WriteLine(menuList);
-        }
-        */
-
-        public void GetMenuItems()
-        {
-            foreach (string key in menuItems.Keys)
+            foreach (string key in menuItems.Keys) //en foreach som använder stringen key för att skriva ut varje Key(dvs inskriven grej) i min dictionary
             {
                 Console.WriteLine(key);
             }
