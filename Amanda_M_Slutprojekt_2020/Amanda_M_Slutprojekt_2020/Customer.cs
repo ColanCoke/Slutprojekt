@@ -13,21 +13,44 @@ namespace Amanda_M_Slutprojekt_2020
             int pref = gen.Next(0, 3); //randomiserar en siffra som korresponderar med en plats i arrayn
             preference = arrPref[pref]; //säger att preference är den delen i listan som pref korresponderar med
 
+            //random generator
+            int cold = gen.Next(1, 2);
+
+            if (cold == 1)
+            {
+                coldPref = true;
+                
+            }
+            else
+            {
+                coldPref = false;
+            }
+
         }
 
+        bool coldPref;
         string preference; //string för preference så det kan användas genom hela klassen
 
         public string GetPreference() //metod som skriver ut customers preference
         {
             return preference;
         }
-
-        bool likesCold() //a boolean to see if customer likes cold or warm food/drink.
+        public string GetColdPref()
         {
-            return false;
+            if (coldPref == true)
+            {
+                return "They prefers cold drinks!";
+            }
+
+            return "They prefers warm drinks!";
+        }
+        
+
+        public void Score()
+        {
+            
         }
 
-        
 
         //Make an array or list containing preferences and name it preferences.
         //Then you can use that list to reference it with a variable/string

@@ -6,9 +6,9 @@ namespace Amanda_M_Slutprojekt_2020
 {
     class ColdDrink : Drink
     {
-        public override bool Cold()
+        public ColdDrink()
         {
-            return true;
+            isCold = true;
         }
         
     }

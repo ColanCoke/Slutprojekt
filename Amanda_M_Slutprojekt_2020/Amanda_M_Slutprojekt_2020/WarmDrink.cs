@@ -4,7 +4,12 @@ using System.Text;
 
 namespace Amanda_M_Slutprojekt_2020
 {
-    class WarmDrink
+    class WarmDrink : Drink
     {
+        public WarmDrink()
+        {
+            isCold = false;
+        }
+
     }
 }

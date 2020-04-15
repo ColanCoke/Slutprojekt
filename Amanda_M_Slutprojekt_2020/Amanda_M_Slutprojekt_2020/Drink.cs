@@ -21,11 +21,7 @@ namespace Amanda_M_Slutprojekt_2020
 
         public string choiceDrink;
 
-        public virtual bool Cold()
-        {
-            return false;
-        }
-
+        public bool isCold;
         
     }
 }

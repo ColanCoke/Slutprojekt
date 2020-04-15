@@ -63,7 +63,14 @@ namespace Amanda_M_Slutprojekt_2020
                     drink.choiceDrink = Console.ReadLine();
                 }
 
-                drink = new ColdDrink();
+                if (drink.choiceDrink == "Flying Syrup" && drink.choiceDrink == "Brewed Cocoa" && drink.choiceDrink == "Poppymilk")
+                {
+                    drink = new WarmDrink();
+                }
+                else
+                {
+                    drink = new ColdDrink();
+                }
 
 
                 Console.ReadLine();
