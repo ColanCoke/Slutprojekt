@@ -10,7 +10,7 @@ namespace Amanda_M_Slutprojekt_2020
         {
             menuItems.Add("Flying Syrup", "sweet");
             menuItems.Add("Brewed Cocoa", "savoury");
-            menuItems.Add("Poppy Milk", "sour");
+            menuItems.Add("Warm Poppy Milk", "sour");
             menuItems.Add("Froglegmonade", "sour");
             menuItems.Add("Juiced Sage", "savoury");
             menuItems.Add("Goat's Breath Milkshake", "sweet");
@@ -19,9 +19,9 @@ namespace Amanda_M_Slutprojekt_2020
         //if it is choice 1-3 cold = false
         //if it is choice 4-6 cold = true
 
-        public string choiceDrink;
+        public string choiceDrink; //a string for player to choose the drink they want
 
-        public bool isCold;
+        public bool isCold; //a bool to see if drink is cold or nah
         
     }
 }

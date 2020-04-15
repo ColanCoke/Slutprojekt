@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+//lade till Linq för att kunna göra capitalized first letters i en string
 
 namespace Amanda_M_Slutprojekt_2020
 {
@@ -14,67 +16,97 @@ namespace Amanda_M_Slutprojekt_2020
               
             */
 
+            //exposition
             Console.WriteLine("Welcome to Witchy Brews, the café where we know more about what you want than you do!");
             Console.WriteLine("You are the owner, having an ability to 'read' incoming costumers to find out what they like.");
             Console.WriteLine("You get to choose a drink and then the optional choices of meal and/or side.");
             Console.WriteLine("Ready? Let's start!");
 
-            string play = YesNo();
+            string play = YesNo(); //vill spelaren spela?
 
-            while (play == "yes")
+            while (play == "yes") //gör en loop som innehåller spelet
             {
-                var c1 = new Customer();
+                var c1 = new Customer(); //skapar en customer. använder var för att snygga upp koden (annars skulle jag behövt skriva customer två gånger)
 
                 Console.WriteLine("A costumer enters the shop! They step up to the counter and you greet them.");
                 Console.WriteLine("Do you want to 'read' the customer?");
                 Console.WriteLine("Write Yes or No.");
 
-                string read = YesNo();
+                string read = YesNo(); //kollar om spelaren vill veta customer preference eller inte
 
-                if(read == "yes")
+                if(read == "yes") //if. Om yes får de fakta om customer.
                 {
                     Console.WriteLine("You focus in on the customer, taking a deep gander at their eyes.");
                     Console.WriteLine("You feel a gentle tingle of magic...");
 
-                    Console.WriteLine("Customer prefers the flavour " + c1.GetPreference() + "!");
+                    Console.WriteLine("Customer prefers the flavour " + c1.GetPreference() + " and they like " + c1.GetColdPref() + " drinks!");
                 }
-                else if (read == "no")
+                else if (read == "no") //om nej får de ett litet meddelande
                 {
                     Console.WriteLine("You decide to wing it. What's the worse that could happen?");
                 }
                 Console.WriteLine("The customer nods to you and seats themselves at a table. Time to prepare their order!");
                 Console.ReadLine();
 
-                Console.Clear();
+                Console.Clear(); //clear console
 
 
-                var drink = new Drink();
+                var drink = new Drink(); //gör en ny instans av drink
 
                 Console.WriteLine("You head to the kitchen to prepare a drink for the customer.");
-                Console.WriteLine("Choose drink (please write the item EXACTLY as it is written):");
+                Console.WriteLine("Choose drink (please write the item exactly as it is written):");
 
-                drink.GetMenuItems();
-                drink.choiceDrink = Console.ReadLine();
+                drink.GetMenuItems(); //visar vilka menu items som finns
+                string inputDrink = Console.ReadLine().ToLower();
 
+                // split into array with one word in each index: ["flying", "whale"]
+                string[] w = inputDrink.Split(' ');
+                for (int i = 0; i < w.Length; i++)
+                {
+                    char[] temp = w[i].ToCharArray(); // make temp char array to change first letter
+                    temp[0] = temp[0].ToString().ToUpper().ToCharArray()[0]; // make first letter upper case
+                    w[i] = new string(temp); // set the word to the new word with upper-case first letter
+                }
+                inputDrink = w.Aggregate((i, o) => $"{i} {o}"); // turn back into a string
+
+                drink.choiceDrink = inputDrink;
+
+                //en whileloop som kollar att det spelaren skrev finns i menu items. om inte måste de skriva om.
                 while (drink.menuItems.ContainsKey(drink.choiceDrink) == false)
                 {
                     Console.WriteLine("Hm, I don't remember a drink like that...");
                     Console.WriteLine("Please write one of the following drink names. Write the item EXACTLY as it is written.");
-                    drink.choiceDrink = Console.ReadLine();
+                    inputDrink = Console.ReadLine().ToLower();
+                    
+                    // split into array with one word in each index: ["flying", "whale"]
+                    w = inputDrink.Split(' ');
+                    for (int i = 0; i < w.Length; i++)
+                    {
+                        char[] temp = w[i].ToCharArray(); // make temp char array to change first letter
+                        temp[0] = temp[0].ToString().ToUpper().ToCharArray()[0]; // make first letter upper case
+                        w[i] = new string(temp); // set the word to the new word with upper-case first letter
+                    }
+                    inputDrink = w.Aggregate((i, o) => $"{i} {o}"); // turn back into a string
+
+                    drink.choiceDrink = inputDrink;
                 }
 
-                if (drink.choiceDrink == "Flying Syrup" && drink.choiceDrink == "Brewed Cocoa" && drink.choiceDrink == "Poppymilk")
+                //om deras val är något av dessa görs drink om
+                if (drink.choiceDrink == "Flying Syrup" || drink.choiceDrink == "Brewed Cocoa" || drink.choiceDrink == "Poppymilk")
                 {
-                    drink = new WarmDrink();
+                    drink.isCold = false;
+                    Console.WriteLine("You start preparing a warm cup of " + drink.choiceDrink + "!");
                 }
-                else
+                else //behöver inte definieras som else if då det är onödig kod
                 {
-                    drink = new ColdDrink();
+                    drink.isCold = true;
+                    Console.WriteLine("You start preparing a cold glass of " + drink.choiceDrink + "!");
                 }
 
 
                 Console.ReadLine();
             }
+
 
             
 

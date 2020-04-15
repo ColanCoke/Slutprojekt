@@ -21,9 +21,9 @@ namespace Amanda_M_Slutprojekt_2020
             }
             */
 
-            foreach (KeyValuePair<string, string> item in menuItems)
+            foreach (KeyValuePair<string, string> item in menuItems)  //en foreach som skriver ut både keys och values i min dictionary
             {
-                Console.WriteLine(item.Key + " | Flavour: " + item.Value);
+                Console.WriteLine(item.Key + " | Flavour: " + item.Value); //separerar keys och flavours på ett snyggare sätt i koden
             }
         }
 
