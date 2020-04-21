@@ -20,7 +20,7 @@ namespace Amanda_M_Slutprojekt_2020
             Console.WriteLine("Welcome to Witchy Brews, the café where we know more about what you want than you do!");
             Console.WriteLine("You are the owner, having an ability to 'read' incoming costumers to find out what they like.");
             Console.WriteLine("You get to choose a drink and then the optional choices of meal and/or side.");
-            Console.WriteLine("Ready? Let's start!");
+            Console.WriteLine("Do you want to play? Write yes or no.");
 
             string play = YesNo(); //vill spelaren spela?
 
@@ -78,7 +78,7 @@ namespace Amanda_M_Slutprojekt_2020
                     Console.WriteLine("Please write one of the following drink names. Write the item EXACTLY as it is written.");
                     inputDrink = Console.ReadLine().ToLower();
                     
-                    // split into array with one word in each index: ["flying", "whale"]
+                    //Hittade denna på internet. Kan inte förklara den, men den gör så första bokstaven i varje ord blir uppercase.
                     w = inputDrink.Split(' ');
                     for (int i = 0; i < w.Length; i++)
                     {
@@ -111,32 +111,6 @@ namespace Amanda_M_Slutprojekt_2020
             
 
             /*
-             Ready for customer?
-             YesNo
-             No exits game
-
-            Yes leads to the primary game loop;
-
-            "While PlayGame == "yes""
-            {
-            Customer enters
-
-            Read customer?
-            YesNo
-
-            Reading customer gives info 
-            AnyKey(clear console)
-
-            Order start!
-
-            What drink?
-            Flying Syrup <- Warm Sweet
-            Brewed Cocoa <- Warm Savoury
-            Poppy Milk <- Warm Sour
-            Frogle(g)monade <- Cold Sour
-            Juiced Sage <- Cold Savoury
-            Goat's Breath Milkshake <- Cold Sweet
-
             Yesno Meal
             Pie of Newt <- Savoury
             Ceramic-su <- Sweet
@@ -169,7 +143,7 @@ namespace Amanda_M_Slutprojekt_2020
             Console.ReadLine();
         }
 
-        static string YesNo()
+        static string YesNo() //metod för yes och no svar
         {
             string yesno = Console.ReadLine().ToLower(); //simpelt. En metod som skickar ut Yes eller No som en string till metoden som kallade på YesNo.
 

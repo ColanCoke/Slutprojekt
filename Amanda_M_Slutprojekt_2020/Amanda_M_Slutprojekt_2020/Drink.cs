@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Amanda_M_Slutprojekt_2020
 {
-    class Drink : Food
+    class Drink : Food //klass för drycker som ärver från Food
     {
         public Drink() //en konstruktor som lägger till drickor till menuItems
         {
