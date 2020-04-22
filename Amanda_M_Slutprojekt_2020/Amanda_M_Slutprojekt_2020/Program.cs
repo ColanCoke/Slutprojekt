@@ -59,7 +59,7 @@ namespace Amanda_M_Slutprojekt_2020
                 drink.GetMenuItems(); //visar vilka menu items som finns
                 string inputDrink = Console.ReadLine().ToLower();
 
-                // split into array with one word in each index: ["flying", "whale"]
+                // Hittade den
                 string[] w = inputDrink.Split(' ');
                 for (int i = 0; i < w.Length; i++)
                 {
